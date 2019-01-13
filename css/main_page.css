@@ -1,0 +1,35 @@
+/*selects and sets html background image
+*/
+html {
+background: url("../img/main_background.jpg") no-repeat center center fixed;
+background-size: cover;
+height: 100%;
+overflow: hidden;
+}
+
+#mainPageBody {
+    color: white;
+    font-family: serif;
+}
+
+/*custom class that centers the grid div on screen*/
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*selects the welcome text*/
+h3#welcome {
+    background: darkgrey;
+    border-radius: 5px;
+}
+.row {
+    margin: 20px;
+}
+
+/*this is a class to hide button*/
+.sharebut{
+    display: none;
+}

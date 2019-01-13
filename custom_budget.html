@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <title>Budget Planner</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+<!--    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">-->
+    
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   
+    <header class="container-fluid text-left">
+       <nav class="navbar navbar-fixed-top">
+<!--        <h2>BUDGET PLANNER</h2>-->
+        
+        
+        <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle pull-left" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+                <!--back button-->
+<!--  <a class="btn btn-primary pull-right" href="main.html">Back</a>-->
+  
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+<!--    <button class="dropdown-item btn-block btn-primary" data-toggle="modal" data-target="#exampleModalLong" type="button" onclick="viewHistory()">View History</button> <br>-->
+    <button class="dropdown-item btn-block btn-primary" data-toggle="modal" data-target="#personalModalLong" type="button" onclick="viewHistory()" id="">View History</button> <br>
+    <button class="dropdown-item btn-block btn-primary" type="button" id="clearButton">Clear History</button> <br>
+    <button class="dropdown-item btn-block btn-primary" type="button" onclick="shareHistory(); return false">Share Budget History</button> <br>
+    <button class="dropdown-item btn-block btn-primary" data-toggle="modal" data-target="#exampleModalLong"  type="button">View Current Budget</button> <br>
+    <button class="dropdown-item btn-block btn-primary" type="button" onclick="shareCurrent(); return false">Share Current Budget</button> <br>
+    <button class="dropdown-item btn-block btn-primary" type="button" onclick="clearCurrent()">Clear current Budget</button> <br>
+<!--    <button class="dropdown-item btn-block btn-primary" data-toggle="modal" data-target="#personalModalLong2" type="button">About</button> <br>-->
+  </div>
+</div>
+        
+      </nav>  
+    </header>
+    <div class="container-fluid" id="income">
+    <div class="row">
+     <div class="col-12">
+     <span>Total Income:</span> <input type="number" min="0" required placeholder="0" class="income pull-right" id="incomeinput">
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-12">
+    <span>Savings:</span> <input type="number" placeholder="0" class="savings pull-right" id="savings" min="0" step="1">
+    </div>
+   </div> 
+  </div>
+   
+   <div class="container-fluid">
+              <div class="text-center"> <h3 id="expenditures">Expenditures</h3></div>
+   </div>    
+   
+            <!--enter new expenditure popup-->
+<!--
+   <div class="middle hidePopUp"><div class="text-center"><h4>Edit Budget Item</h4> 
+     <input id="expenditureTitle" type="text" placeholder="Enter Label Name">
+      </div>
+       <button class="btn btn-block btn-primary ok-button" id="okButton">OK</button>
+   
+   </div>    
+-->
+   
+   
+   <!--enter new expenditure popup-->
+<!--
+   <div class="newMiddle newPopUp"><div class="text-center"><h4>New Expenditure</h4> <input id="expenditureTitle" type="text" placeholder="Expenditure title"></div>
+       <button class="btn btn-block btn-primary ok-button" id="">OK</button>
+   
+   </div>
+-->
+   
+   
+   
+<!--          add and reset buttons       -->
+    <div class="container">
+
+            <div class="col4"><button class="btn btn-sm btn-primary pull-left" id="addField">Add Field</button></div>
+<!--            <div class="col4"><button class="btn btn-sm">Remove Field</button></div>-->
+            <div class="col4"><button class="btn btn-danger btn-sm pull-right" id="reset">Reset</button></div>
+        </div>
+               
+    <div class="container-fluid cust" id="container">
+
+<!--
+       add .expInput class to all input in ths form
+  add .label class to all span class in this   form Span that carries the input label
+-->
+<!--               row 1-->
+        <div class="row">
+<!--           col 1-->
+           <div class="col-12">
+              
+               <div class=""><span class="label" id="first"> Food:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="food"></div>
+           </div>
+        
+        </div>
+        
+<!--        row 2-->
+         <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+                
+               <div class=""><span class="label" id="second"> Clothing:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="clothing"></div>
+           </div>
+        </div>
+        
+<!--        row 3-->
+        <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+                
+                <div class=""><span class="label" id="third"> Shelter:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="shelter"></div>
+           </div>
+        </div>
+        
+<!--        row 4-->
+        <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+                
+                <div class=""><span class="label" id="fourth"> Transportation:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="transportation"></div>
+           </div>
+        </div>
+        
+<!--        row 5-->
+        <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+                
+                <div class=""><span class="label" id="fifth"> Electricity:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="electricity"></div>
+           </div>
+        </div>
+        
+<!--        row 6-->
+        <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+            
+            <div class=""><span class="label" id="sixth"> Water:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="water"></div>
+            </div>
+           </div>
+           
+<!--        row 7-->
+       <div class="row">
+<!--            col 1-->
+           <div class="col-12">
+         
+             <div class=""><span class="label" id="seventh"> Miscellaneous:</span> <input type="number" min="0" class="pull-right expInput" placeholder="0" id="miscellaneous"></div>
+        
+           </div>
+        </div>
+        
+
+<!--        put modal1 here-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-primary">
+      <div class="modal-header">
+          <h5 class="modal-title text-muted" id="exampleModalLongTitle"><b>Current Budget: </b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-muted" id="modal-bod">
+<!--        what the?-->Empty!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="shareb">Share</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--    end of pop up modal-->
+   
+<!--   Personal modal starts here-->
+      <div class="modal fade" id="personalModalLong" tabindex="-1" role="dialog" aria-labelledby="personalModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content bg-primary">
+            <div class="modal-header">
+                <h5 class="modal-title text-muted text-center" id="personalModalLongTitle"><b>Budget History</b></h5>
+                <button type="button" class="close" data-dismiss = "modal" aria-label= "close">
+                <span aria-hidden="true">&times;</span>        
+                </button>
+            </div> 
+            
+            <div class="modal-body text-muted break" id="modalId">
+        <!--   modal body goes here-->
+            </div>      
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss= "modal" onclick="clearHistory()" id="clearH"> Clear</button><button type="button" class="btn btn-secondary" data-dismiss= "modal"> Close</button>
+                  <button type="button" class="btn btn-primary" id="shareH"> share</button>
+              </div>  
+            </div>  
+              
+              
+          </div>
+          
+      </div> 
+        <!-- end of personal modal1--> 
+      
+<!-- personal modal2 starts here-->
+   
+      <div class="modal fade" id="personalModalLong2" tabindex="-1" role="dialog" aria-labelledby="personalModalLongTitle2" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content bg-primary">
+            <div class="modal-header">
+                <h5 class="modal-title text-muted text-center" id="personalModalLongTitle"><b>About</b></h5>
+                <button type="button" class="close" data-dismiss = "modal" aria-label= "close">
+                <span aria-hidden="true">&times;</span>        
+                </button>
+            </div> 
+            
+            <div class="modal-body text-muted" id="modalId2">
+        <!--   modal body goes here-->
+           <p>Budget Planner&reg; is a registered trademark of waxx technologies&copy;2018. Visit us at <a href="www.waxxtech.net">our website</a> or send us an <a href="mailto:support@waxxtech.com">email</a></p>
+            </div>      
+              <div class="modal-footer">
+                  
+                  <button type="button" class="btn btn-secondary" data-dismiss= "modal"> Close</button>
+                  
+              </div>  
+            </div>  
+              
+              
+          </div>
+          
+      </div>
+<!--end of personal modal2-->
+   
+    </div>  
+    
+                <!-- Button trigger modal and computes budget -->
+    
+               <footer>
+<nav class="navbar fixed-bottom">
+ <button type="button" class="btn btn-lg btn-success btn-block" id="compute" data-toggle="modal" data-target="#exampleModalLong" onclick="computeb()">
+  Compute Budget
+ </button>
+ </nav>
+</footer>
+              
+
+   
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/bootstrap.js" charset="utf-8"></script>
+    <script src="js/popper.min.js" charset="utf-8"></script>
+    <script src="js/custom_budget.js" charset="utf-8"></script>
+<!--    <script src="js/jquery.mobile-1.4.5.min.js" charset="utf-8"></script>-->
+  </body>
+</html>

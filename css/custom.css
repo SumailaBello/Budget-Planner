@@ -1,0 +1,172 @@
+/*selects and sets html background image
+*/
+html {
+background: url("../img/background.jpg") no-repeat center center fixed;
+background-size: cover;
+height: 100%;
+overflow: hidden;
+overflow-y: auto;
+}
+
+
+body {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-attachment: fixed;
+    padding-top: 80px;
+    color: white;
+    font-family: serif;
+}
+
+/*initial header properties*/
+header {
+    background-color: darkgrey;
+}
+
+/*removes top margin of h2 in header to reduce the height of the header*/
+header h2{
+    margin-top: 0;
+}
+
+/*selects the always visible navbar tag fixed at the top*/
+nav {
+/*    background-color: darkgrey;*/
+    padding: 5px;
+}
+
+/*selects the div holding drop down menu items*/
+div.dropdown-menu {
+    margin-top: 35px;
+    background-color: grey;
+    padding:5px;
+    height: 250px;
+    overflow-y: auto;
+    
+}
+
+/*selects the dropdown menu items*/
+div.dropdown button.dropdown-item {
+    margin-bottom: 0;
+    font-weight: bold;
+    background-color: darkgrey;
+    border-radius: 5px;
+} 
+/*selects the income form field*/
+
+/*selects all input fields*/
+input {
+    color: black;
+    
+}
+#income {
+/*    margin-top: 5px;*/
+    font-size: 20px;
+    padding: 30px;
+}
+
+/*selects input field inside the div with id "income" below the header*/
+div#income input{
+    width: 40%;
+   
+}
+
+.income{
+     margin-bottom: 10px;
+}
+ 
+/*selects the savings input field*/
+.savings {
+/*   margin left aligns the savings input field with the total income input field*/
+    margin-left: 42px;
+    margin-top: 5px;
+}
+
+/*selects the expenditures text*/
+h3#expenditures {
+    background: darkgrey;
+    border-radius: 5px;
+}
+
+/*selects all input field under expenditure and sets the width*/
+input.expInput, input.expInput0{
+    width: 30%;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+.expInput, expInput0{
+    width: 30%;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+/*selects all the input labels in span tags under expenditures*/
+ span.label {
+    font-size: 17px;
+    margin-left: 6px;
+}
+
+.label {
+    font-size: 17px;
+    margin-left: 6px;
+}
+
+
+button#compute {
+    margin-top: 25px;
+}
+
+/*styles the modal*/
+.error{
+    color:red;
+    
+}
+
+/*this is a class to hide button*/
+.sharebut{
+    display: none;
+}
+
+
+    /*custom page*/
+
+/*hides all rows to be customised*/
+.custom {
+    display: none;
+}
+
+/*custom class that centers the popup div on screen*/
+div.middle0, div.middle1, div.middle2,div.middle3,div.middle4,div.middle5,div.middle6,div.middle7, newMiddle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 130px;
+  width:70%;
+  background: grey;
+  padding: 5px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.ok-button {
+  margin-top: 5px;
+}
+
+/*selects the custom pop up input*/
+input[placeholder*="Name"] {
+  width: 100%;
+}
+
+#addField, #reset {
+    margin-bottom: 10px;
+}
+
+/*selects cancel button inside popup*/
+.cancel-button {
+    margin-top: 5px;
+}
